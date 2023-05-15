@@ -1,0 +1,46 @@
+<style>
+  .tag_outline {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    
+    width: 142px;
+    height: 28px;
+    
+    /* primary 1 */
+    
+    border: 1px solid #1D1D1D;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin-bottom: 18px
+  }
+
+  .text_inside {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    
+    /* primary 1 */
+
+color: #1D1D1D;
+  }
+  
+</style>
+
+<div class="tag_outline">
+  <p class="text_inside">{{ blog.tags[0] }}</p>
+</div>

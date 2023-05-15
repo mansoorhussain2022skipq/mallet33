@@ -1,0 +1,71 @@
+{% comment %} <style>
+          .hero__text-shadow {
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero__top-subtitle {
+          font-size: 1.1em;
+          letter-spacing: .3em;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+      }
+
+
+        @media only screen and (min-width: 769px)
+      .slideshow__slide--slideshow-1 .hero__title {
+          font-size: 40px;
+      }
+
+      .hero__subtitle {
+        display: block;
+        font-size: 1.3em;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        vertical-align: middle;
+    }
+
+      @media only screen and (min-width: 769px)
+    .hero__text-content .hero__link {
+        margin-top: 15px;
+    }
+
+    .hero__text-content .hero__link {
+        margin-top: 7.5px;
+    }
+    .hero__link {
+        display: block;
+        position: relative;
+    }
+
+    .animation-cropper {
+      display: inline-flex;
+      overflow: hidden;
+  }
+
+    .loaded .slideshow__slide.is-selected .hero__title .animation-contents, .loaded[data-aos=hero__animation] .hero__title .animation-contents {
+      animation: .8s cubic-bezier(.26,.54,.32,1) .3s forwards;
+      animation-name: rise-up;
+  }
+  .loaded .slideshow__slide.is-selected .animation-contents, .loaded[data-aos=hero__animation] .animation-contents {
+      transform: translateY(0);
+  }
+  .slideshow__slide .animation-contents, [data-aos=hero__animation] .animation-contents {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: none;
+  }
+</style> {% endcomment %}
+
+<div class="hero__text-shadow">
+  <div class="hero__top-subtitle">
+    <div class="animation-cropper"><div class="animation-contents">THE NEW EVOLUTION</div></div>
+  </div>
+  <h2 class="h1 hero__title">
+    <div class="animation-cropper"><div class="animation-contents">MEET THE NEPTUNE</div></div>
+  </h2>
+  <div class="hero__subtitle">
+    <div class="animation-cropper"><div class="animation-contents">And optional subtext</div></div>
+  </div>
+  <div class="hero__link"><a href="/collections/all" class="btn"> SHOP NOW </a></div>
+</div>

@@ -1,0 +1,278 @@
+<style>
+
+  .grid--custom {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 16px;
+/*     padding: 0 30px; */
+    
+  }
+
+  @media screen and (min-width: 769px) {
+   .grid--custom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+  }
+
+  
+    
+}
+
+  @media screen and (min-width: 769px) {
+    .image--custom {
+    width: 100%;
+    height: auto;
+    max-width: 410px;
+/*     max-height: 518px; */
+  }
+}
+
+  .image--custom {
+    width: 100%;
+    height: auto;
+  }
+  
+  .label--custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+   .label_bar--custom {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 58px;
+    line-height: 77px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+  }
+
+
+  .container--custom {
+    position: relative;
+    text-align: center;
+  }
+
+  .title_1--custom {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  
+@media screen and (min-width: 370px) {
+    .title_1--custom {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 48px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+}
+
+  @media (width >= 769px) and (width < 1050px) {
+     .title_1--custom {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  }
+
+   .title_2--custom {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 77px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .title_2_sub--custom {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+  }
+
+
+  
+
+  @media (width >= 768px) and (width <= 950px) {
+     .title_2_sub--custom {
+      top: 64%;
+    }
+  }
+
+
+  @media (width <= 430px) {
+    .title_2_sub--custom {
+      top: 64.5%;
+    }
+  }
+
+  
+
+    @media (width <= 370px) {
+     .title_2--custom {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+  }   
+    }
+   
+
+
+    @media (width >= 370px) and (width <= 769px) {
+    .title_2--custom {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 77px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+}
+
+    @media (width >= 769px) and (width < 1050px) {
+   .title_2--custom {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+  @media (width >= 1050px) {
+     .title_2--custom {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 77px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  }
+ 
+</style>
+
+
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+  <div class="grid--custom">
+      <div class="container--custom">
+          {% render 'image-element',
+              img: section.settings.image1,
+              classes: 'image--custom'
+          %}
+          <span class="label--custom title_1--custom">{{ section.settings.title_1 }}</span>
+      </div>
+
+      <div  class="container--custom">
+           {% render 'image-element',
+              img: section.settings.image2,
+              classes: 'image--custom'
+          %}
+          <span class="label--custom title_2--custom">{{ section.settings.title_2 }}</span>
+          <span class="label_bar--custom">_</span>
+          <span class="title_2_sub--custom">{{ section.settings.subtitle_2 }}</span>
+      </div>
+
+      <div  class="container--custom">
+           {% render 'image-element',
+              img: section.settings.image3,
+              classes: 'image--custom'
+          %}
+           <span class="label--custom title_1--custom">{{ section.settings.title_3 }}</span>
+      </div>
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+{
+  "name": "Simple Promo",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Image 1 Title",
+      "default": "Best"
+    },
+     {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Image 2 Title",
+      "default": "Mallet."
+    },
+    {
+      "type": "text",
+      "id": "subtitle_2",
+      "label": "Image 2 Sub-title",
+      "default": "London"
+    },
+     {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Image 3 Title",
+      "default": "Quality"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple Promo"
+    }
+  ]
+}
+{% endschema %}
