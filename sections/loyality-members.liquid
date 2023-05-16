@@ -1,0 +1,129 @@
+<style>
+  body,
+  html {
+    height: 100%;
+  }
+
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .block-coins {
+    margin: 5rem 10rem;
+  }
+
+  .container-coins {
+    text-align: center;
+  }
+
+  @media(width > 768px) {
+    .container-coins {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media(width > 1000px) {
+    .container-coins {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+
+
+  @media(width > 768px) {
+    .btn-coins {
+      padding: 19px 3.4rem;
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+</style>
+
+
+<div class="block-coins">
+  <div class="container-coins">
+    {% render 'loyality-coins', coin-img: "https://cdn.shopify.com/s/files/1/0756/2012/2920/files/01bronze.png?v=1684247903", title: "Bronze", subtitle: section.settings.subtitle1, details: section.settings.details1 %}
+    {% render 'loyality-coins', coin-img: "https://cdn.shopify.com/s/files/1/0756/2012/2920/files/02silver.png?v=1684247903", title: "Silver", subtitle: section.settings.subtitle2, details: section.settings.details2 %}
+    {% render 'loyality-coins', coin-img: "https://cdn.shopify.com/s/files/1/0756/2012/2920/files/03gold.png?v=1684247903", title: "Gold", subtitle: section.settings.subtitle3, details: section.settings.details3 %}
+    {% render 'loyality-coins', coin-img: "https://cdn.shopify.com/s/files/1/0756/2012/2920/files/04platinum.png?v=1684247903", title: "Platinium", subtitle: section.settings.subtitle4, details: section.settings.details4 %}
+  </div>
+  <div class="btn-container">
+    <a href="/" class="btn btn-coins">Register</a>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Loyality Members",
+    "class": "index-section--flush",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle1",
+        "label": "First Block Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "details1",
+        "label": "First Block Details",
+        "info": "Add <br> tag in your sentence for new-line."
+      },
+      {
+        "type": "text",
+        "id": "subtitle2",
+        "label": "Second Block Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "details2",
+        "label": "Second Block Details",
+        "info": "Add <br> tag in your sentence for new-line."
+      }, {
+        "type": "text",
+        "id": "subtitle3",
+        "label": "Third Block Subtitle"
+      }, {
+        "type": "text",
+        "id": "details3",
+        "label": "Third Block Details",
+        "info": "Add <br> tag in your sentence for new-line."
+      }, {
+        "type": "text",
+        "id": "subtitle4",
+        "label": "Fourth Block Subtitle"
+      }, {
+        "type": "text",
+        "id": "details4",
+        "label": "Fourth Block Details",
+        "info": "Add <br> tag in your sentence for new-line."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Loyality Members",
+        "settings": {
+          "subtitle1": "Start Here",
+          "subtitle2": "REACH 500 POINTS",
+          "subtitle3": "REACH 2000 POINTS",
+          "subtitle4": "REACH 5000 POINTS",
+          "details1": "1 Point Per £1 <br> Early Access to Realeases<br>Redeemable Rewards<br>Secret Promo Codes<br>10% Off First Purchase For Signing Up",
+          "details2": "1 Point Per £1 <br> Early Access to Realeases<br>Redeemable Rewards<br>Secret Promo Codes<br>10% Off First Purchase For Signing Up",
+          "details3": "1 Point Per £1 <br> Early Access to Realeases<br>Redeemable Rewards<br>Secret Promo Codes<br>10% Off First Purchase For Signing Up",
+          "details4": "1 Point Per £1 <br> Early Access to Realeases<br>Redeemable Rewards<br>Secret Promo Codes<br>10% Off First Purchase For Signing Up"
+        }
+      }
+    ]
+  }
+{% endschema %}
